@@ -1,10 +1,10 @@
 # Plurky
 
-TODO: Write a gem description
+Yet another Plurk API.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add this line to your application's `Gemfile`:
 
     gem 'plurky'
 
