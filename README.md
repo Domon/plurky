@@ -1,6 +1,6 @@
 # Plurky
 
-Yet another Plurk API.
+Yet another Plurk API wrapper. Or something to play when the Plurk team is busy optimizing the site.
 
 ## Installation
 
@@ -16,9 +16,50 @@ Or install it yourself as:
 
     $ gem install plurky
 
+## Documentation
+
+http://rdoc.info/gems/plurky
+
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'plurky'
+
+client = Plurky.new
+client.get '/APP/Profile/getPublicProfile', :user_id => 34
+```
+
+## Configuration
+
+Applications that make requests on behalf of a single Plurk user can pass global configuration options as a block to the `Plurky.configure` method.
+
+```ruby
+Plurky.configure do |config|
+  config.consumer_key       = YOUR_CONSUMER_KEY
+  config.consumer_secret    = YOUR_CONSUMER_SECRET
+  config.oauth_token        = YOUR_OAUTH_TOKEN
+  config.oauth_token_secret = YOUR_OAUTH_TOKEN_SECRET
+end
+```
+
+Alternately, you can set the following environment variables:
+
+```
+PLURK_CONSUMER_KEY
+PLURK_CONSUMER_SECRET
+PLURK_OAUTH_TOKEN
+PLURK_OAUTH_TOKEN_SECRET
+```
+
+After configuration, requests can be made like so:
+
+```ruby
+Plurky.get '/APP/Timeline/getPlurks'
+```
+
+## TODO
+
+* Complete the tests.
 
 ## Contributing
 
@@ -27,3 +68,16 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+## Credits
+
+Most of the code are copy-pasted from the [twitter][] gem.
+
+[twitter]: https://github.com/sferik/twitter
+
+## Copyright
+
+Copyright (c) 2012 Chun-wei Kuo. See [LICENSE][] for details.
+
+[license]: https://github.com/Domon/plurky/blob/master/LICENSE.md
+

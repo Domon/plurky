@@ -8,8 +8,8 @@ Gem::Specification.new do |gem|
   gem.version       = Plurky::VERSION
   gem.authors       = ["Chun-wei Kuo"]
   gem.email         = ["Dendoh@gmail.com"]
-  gem.description   = %q{Yet another Plurk API}
-  gem.summary       = %q{Yet another Plurk API}
+  gem.description   = %q{Yet another Plurk API wrapper}
+  gem.summary       = %q{Yet another Plurk API wrapper}
   gem.homepage      = "https://github.com/Domon/plurky"
 
   gem.files         = `git ls-files`.split($/)
@@ -17,5 +17,11 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+  gem.add_dependency 'faraday',      '~> 0.8.4'
+  gem.add_dependency 'simple_oauth', '~> 0.1.9'
+
   gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'rspec'
+  gem.add_development_dependency 'webmock'
+  gem.add_development_dependency 'pry-nav'
 end
