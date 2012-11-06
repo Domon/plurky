@@ -26,7 +26,7 @@ describe Plurky::Client do
     end
 
     it "inherits the module configuration" do
-      client = Plurky.new
+      client = Plurky.client
       configuration.each do |key, value|
         client.instance_variable_get(:"@#{key}").should == value
       end

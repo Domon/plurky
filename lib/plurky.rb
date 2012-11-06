@@ -6,13 +6,13 @@ module Plurky
   class << self
     include Plurky::Configurable
 
-    # Alias for Plurky::Client.new
+    # Delegate to a Plurky::Client
     #
     # @return [Plurky::Client]
-    def client(options = {})
-      @client = Plurky::Client.new(options)
+    def client
+      @client = Plurky::Client.new(options) unless defined?(@client) && @client.cache_key == options.hash
+      @client
     end
-    alias new client
 
     # Delegate to Plurky::Client
     #

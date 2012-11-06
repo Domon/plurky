@@ -6,6 +6,24 @@ describe Plurky do
     it "returns a Plurky::Client" do
       Plurky.client.should be_a Plurky::Client
     end
+
+    context "when the options don't change" do
+      it "caches the client" do
+        Plurky.client.should == Plurky.client
+      end
+    end
+
+    context "when the options change" do
+      it "creates a new client" do
+        client1 = Plurky.client
+        Plurky.configure do |config|
+          config.consumer_key    = 'CK'
+          config.consumer_secret = 'CS'
+        end
+        client2 = Plurky.client
+        client1.should_not == client2
+      end
+    end
   end
 
   describe ".respond_to?" do

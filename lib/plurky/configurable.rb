@@ -29,6 +29,11 @@ module Plurky
       credentials.values.all?
     end
 
+    # @return [Fixnum]
+    def cache_key
+      options.hash
+    end
+
     def reset!
       Plurky::Configurable.keys.each do |key|
         instance_variable_set(:"@#{key}", Plurky::Default.options[key])
@@ -47,6 +52,11 @@ module Plurky
         :token           => @oauth_token,
         :token_secret    => @oauth_token_secret
       }
+    end
+
+    # @return [Hash]
+    def options
+      Hash[Plurky::Configurable.keys.map{ |key| [key, instance_variable_get(:"@#{key}")] }]
     end
 
   end

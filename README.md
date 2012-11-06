@@ -26,7 +26,7 @@ Or install it yourself as:
 ```ruby
 require 'plurky'
 
-client = Plurky.new
+client = Plurky.client
 client.get '/APP/Profile/getPublicProfile', :user_id => 34
 ```
 
@@ -61,7 +61,6 @@ Plurky.get '/APP/Timeline/getPlurks'
 ## TODO
 
 * Complete the tests.
-* Cache `Plurky.client`.
 * Add APIs.
 * Add support of obtaining access token.
 
