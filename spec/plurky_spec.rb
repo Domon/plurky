@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe Plurky do
 
-  describe ".new" do
+  describe ".client" do
     it "returns a Plurky::Client" do
-      Plurky.new.should be_a Plurky::Client
+      Plurky.client.should be_a Plurky::Client
     end
   end
 

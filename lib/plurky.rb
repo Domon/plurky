@@ -9,21 +9,22 @@ module Plurky
     # Alias for Plurky::Client.new
     #
     # @return [Plurky::Client]
-    def new(options = {})
+    def client(options = {})
       @client = Plurky::Client.new(options)
     end
+    alias new client
 
     # Delegate to Plurky::Client
     #
     def respond_to?(method, include_private = false)
-      new.respond_to?(method, include_private) || super(method, include_private)
+      client.respond_to?(method, include_private) || super(method, include_private)
     end
 
     private
 
     def method_missing(method_name, *args, &block)
-      return super unless new.respond_to?(method_name)
-      new.send(method_name, *args, &block)
+      return super unless client.respond_to?(method_name)
+      client.send(method_name, *args, &block)
     end
 
   end
