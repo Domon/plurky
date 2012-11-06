@@ -18,7 +18,8 @@ Or install it yourself as:
 
 ## Documentation
 
-http://rdoc.info/gems/plurky
+* This gem: http://rdoc.info/gems/plurky
+* Plurk API 2.0: http://www.plurk.com/API
 
 ## Usage
 
@@ -60,14 +61,9 @@ Plurky.get '/APP/Timeline/getPlurks'
 ## TODO
 
 * Complete the tests.
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+* Cache `Plurky.client`.
+* Add APIs.
+* Add support of obtaining access token.
 
 ## Credits
 
