@@ -33,7 +33,7 @@ module Plurky
     #
     # @return [Faraday::Connection]
     def connection
-      @connection ||= Faraday.new(@endpoint)
+      @connection ||= Faraday.new(@endpoint, @connection_options.merge(:builder => @middleware))
     end
 
     # Perform an HTTP request

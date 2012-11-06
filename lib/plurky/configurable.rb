@@ -11,7 +11,9 @@ module Plurky
           :consumer_secret,
           :oauth_token,
           :oauth_token_secret,
-          :endpoint
+          :endpoint,
+          :connection_options,
+          :middleware
         ]
       end
     end
