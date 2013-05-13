@@ -1,16 +1,18 @@
 require 'faraday'
-require 'multi_json'
+require 'hashie/mash'
 
 module Plurky
   module Response
-    class ParseJson < Faraday::Response::Middleware
+    class Mashify < Faraday::Response::Middleware
 
       def parse(body)
         case body
-        when /\A^\s*$\z/, nil
-          nil
+        when Hash
+          Hashie::Mash.new body
+        when Array
+          body.map { |item| item.is_a?(Hash) ? Hashie::Mash.new(item) : item }
         else
-          MultiJson.load(body, :symbolize_keys => true)
+          body
         end
       end
 

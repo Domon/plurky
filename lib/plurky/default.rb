@@ -1,5 +1,6 @@
 require 'plurky/configurable'
 require 'plurky/response/parse_json'
+require 'plurky/response/mashify'
 require 'plurky/version'
 
 module Plurky
@@ -21,6 +22,8 @@ module Plurky
       &Proc.new do |builder|
         builder.use Faraday::Request::Multipart
         builder.use Faraday::Request::UrlEncoded
+
+        builder.use Plurky::Response::Mashify
         builder.use Plurky::Response::ParseJson
         builder.adapter Faraday.default_adapter
       end
