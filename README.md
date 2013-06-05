@@ -1,10 +1,12 @@
 # Plurky
 
 [![Gem Version](https://badge.fury.io/rb/plurky.png)][gem]
+[![Build Status](https://travis-ci.org/Domon/plurky.png)][travis]
 [![Dependency Status](https://gemnasium.com/Domon/plurky.png)][gemnasium]
 [![Code Climate](https://codeclimate.com/github/Domon/plurky.png)][codeclimate]
 
 [gem]: http://badge.fury.io/rb/plurky
+[travis]: https://travis-ci.org/Domon/plurky
 [gemnasium]: https://gemnasium.com/Domon/plurky
 [codeclimate]: https://codeclimate.com/github/Domon/plurky
 
