@@ -4,11 +4,13 @@
 [![Build Status](https://travis-ci.org/Domon/plurky.png)][travis]
 [![Dependency Status](https://gemnasium.com/Domon/plurky.png)][gemnasium]
 [![Code Climate](https://codeclimate.com/github/Domon/plurky.png)][codeclimate]
+[![Coverage Status](https://coveralls.io/repos/Domon/plurky/badge.png)][coveralls]
 
 [gem]: http://badge.fury.io/rb/plurky
 [travis]: https://travis-ci.org/Domon/plurky
 [gemnasium]: https://gemnasium.com/Domon/plurky
 [codeclimate]: https://codeclimate.com/github/Domon/plurky
+[coveralls]: https://coveralls.io/r/Domon/plurky
 
 Yet another Plurk API wrapper. Or something to play when the Plurk team is busy optimizing the site.
 
