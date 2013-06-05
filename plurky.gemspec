@@ -17,9 +17,9 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'faraday',      '~> 0.8.4'
-  gem.add_dependency 'simple_oauth', '~> 0.1.9'
-  gem.add_dependency 'multi_json',   '~> 1.3.7'
+  gem.add_dependency 'faraday',      '~> 0.8.7'
+  gem.add_dependency 'simple_oauth', '~> 0.2.0'
+  gem.add_dependency 'multi_json',   '~> 1.7.3'
   gem.add_dependency 'hashie',       '~> 2.0.5'
 
   gem.add_development_dependency 'rake'
