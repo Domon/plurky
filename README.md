@@ -1,5 +1,13 @@
 # Plurky
 
+[![Gem Version](https://badge.fury.io/rb/plurky.png)][gem]
+[![Dependency Status](https://gemnasium.com/Domon/plurky.png)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/Domon/plurky.png)][codeclimate]
+
+[gem]: http://badge.fury.io/rb/plurky
+[gemnasium]: https://gemnasium.com/Domon/plurky
+[codeclimate]: https://codeclimate.com/github/Domon/plurky
+
 Yet another Plurk API wrapper. Or something to play when the Plurk team is busy optimizing the site.
 
 ## Installation
