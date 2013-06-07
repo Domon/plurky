@@ -4,12 +4,12 @@ describe Plurky do
 
   describe ".client" do
     it "returns a Plurky::Client" do
-      Plurky.client.should be_a Plurky::Client
+      expect(Plurky.client).to be_a Plurky::Client
     end
 
     context "when the options don't change" do
       it "caches the client" do
-        Plurky.client.should == Plurky.client
+        expect(Plurky.client).to eq Plurky.client
       end
     end
 
@@ -21,14 +21,14 @@ describe Plurky do
           config.consumer_secret = 'CS'
         end
         client2 = Plurky.client
-        client1.should_not == client2
+        expect(client1).not_to eq client2
       end
     end
   end
 
   describe ".respond_to?" do
     it "delegates to Plurky::Client" do
-      Plurky.should respond_to :get
+      expect(Plurky).to respond_to :get
     end
   end
 
