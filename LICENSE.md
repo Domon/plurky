@@ -1,4 +1,4 @@
-Copyright (c) 2012 Chun-wei Kuo
+Copyright (c) 2012 - 2013 Chun-wei Kuo
 
 MIT License
 

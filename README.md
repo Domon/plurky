@@ -84,7 +84,7 @@ Most of the code are copy-pasted from the [twitter][] gem.
 
 ## Copyright
 
-Copyright (c) 2013 Chun-wei Kuo. See [LICENSE][] for details.
+Copyright (c) 2012 - 2013 Chun-wei Kuo. See [LICENSE][] for details.
 
 [license]: https://github.com/Domon/plurky/blob/master/LICENSE.md
 
