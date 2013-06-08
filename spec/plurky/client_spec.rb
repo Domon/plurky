@@ -10,7 +10,7 @@ describe Plurky::Client do
     }
   end
 
-  subject { Plurky::Client.new(configuration) }
+  subject(:client) { Plurky::Client.new(configuration) }
 
   context "with module configuration" do
     before do
@@ -26,9 +26,9 @@ describe Plurky::Client do
     end
 
     it "inherits the module configuration" do
-      client = Plurky.client
+      cached_client = Plurky.client
       configuration.each do |key, value|
-        expect(client.instance_variable_get(:"@#{key}")).to eq value
+        expect(cached_client.instance_variable_get(:"@#{key}")).to eq value
       end
     end
 
@@ -37,9 +37,9 @@ describe Plurky::Client do
       let(:different_configuration) { configuration.update :oauth_token_secret => 'OS' }
 
       it "overrides the module configuration" do
-        client = Plurky::Client.new(different_configuration)
+        different_client = Plurky::Client.new(different_configuration)
         different_configuration.each do |key, value|
-          expect(client.instance_variable_get(:"@#{key}")).to eq value
+          expect(different_client.instance_variable_get(:"@#{key}")).to eq value
         end
       end
 
@@ -48,12 +48,13 @@ describe Plurky::Client do
 
   describe "#credentials?" do
     it "returns true if all credentials are present" do
-      client = Plurky::Client.new(configuration)
-      expect(client.credentials?).to be_true
+      client_with_all_credentials = Plurky::Client.new(configuration)
+      expect(client_with_all_credentials.credentials?).to be_true
     end
     it "returns false if any credentials are missing" do
-      client = Plurky::Client.new(:consumer_key => 'CK', :consumer_secret => 'CS', :oauth_token => 'OT')
-      expect(client.credentials?).to be_false
+      client_with_missing_credentials =
+        Plurky::Client.new(:consumer_key => 'CK', :consumer_secret => 'CS', :oauth_token => 'OT')
+      expect(client_with_missing_credentials.credentials?).to be_false
     end
   end
 
@@ -62,8 +63,8 @@ describe Plurky::Client do
     let(:params) { { :user => 34 } }
 
     it "knows how to make get request" do
-      expect(subject).to receive(:request).with(:get, path, params)
-      subject.get path, params
+      expect(client).to receive(:request).with(:get, path, params)
+      client.get path, params
     end
   end
 
@@ -72,14 +73,14 @@ describe Plurky::Client do
     let(:params) { { :image => "" } }
 
     it "knows how to make post request" do
-      expect(subject).to receive(:request).with(:post, path, params)
-      subject.post path, params
+      expect(client).to receive(:request).with(:post, path, params)
+      client.post path, params
     end
   end
 
   describe "#connection" do
     it "looks like Faraday connection" do
-      expect(subject.send(:connection)).to respond_to(:run_request)
+      expect(client.send(:connection)).to respond_to(:run_request)
     end
   end
 
@@ -89,7 +90,7 @@ describe Plurky::Client do
   describe "#auth_header" do
     it "creates the correct auth headers" do
       uri = URI("http://www.plurk.com/APP/Profile/getPublicProfile")
-      authorization = subject.send(:auth_header, :get, uri, { :user_id => 34 })
+      authorization = client.send(:auth_header, :get, uri, { :user_id => 34 })
       expect(authorization.options[:signature_method]).to eq "HMAC-SHA1"
       expect(authorization.options[:version]).to          eq "1.0"
       expect(authorization.options[:consumer_key]).to     eq "CK"
