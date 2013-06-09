@@ -1,10 +1,13 @@
 require 'faraday'
 require 'simple_oauth'
 require 'uri'
+require 'plurky/api'
 require 'plurky/configurable'
 
 module Plurky
+  # Wrapper for the Plurk API 2.0
   class Client
+    include Plurky::API
     include Plurky::Configurable
 
     # Initializes a new Client object

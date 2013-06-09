@@ -33,7 +33,7 @@ Or install it yourself as:
 * This gem: http://rdoc.info/gems/plurky
 * Plurk API 2.0: http://www.plurk.com/API
 
-## Usage
+## Examples
 
 ```ruby
 require 'plurky'
@@ -70,11 +70,21 @@ After configuration, requests can be made like so:
 Plurky.get '/APP/Timeline/getPlurks'
 ```
 
+## Implemented APIs
+
+* status
+
+## The access token
+
+Plurky will not support obtaining access token.
+You can get it from the [test console][].
+
+[test console]: http://www.plurk.com/OAuth/test
+
 ## TODO
 
-* Complete the tests.
+* Improve test coverage.
 * Add APIs.
-* Add support of obtaining access token.
 
 ## Credits
 

@@ -32,4 +32,7 @@ describe Plurky do
     end
   end
 
+  describe ".configure" do
+  end
+
 end
