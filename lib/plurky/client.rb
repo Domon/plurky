@@ -58,7 +58,7 @@ module Plurky
           end
         end
       end
-      response.env
+      response.env[:body]
     end
 
     def auth_header(method, uri, params = {})

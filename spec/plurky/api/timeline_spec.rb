@@ -17,7 +17,7 @@ describe Plurky::API::Timeline do
     it "returns a correct Hashie::Mash" do
       status = client.status(1001647781)
       expect(status).to be_a Hashie::Mash
-      expect(status.content_raw).to eq "http://ridiculousfish.com/shell/index.html (Finally, a command line shell for the 90s) http://emos.plurk.com/b6ebb0a088fa352ee03ed6f760fb319d_w16_h16.png"
+      expect(status.plurk.content_raw).to eq "http://ridiculousfish.com/shell/index.html (Finally, a command line shell for the 90s) http://emos.plurk.com/b6ebb0a088fa352ee03ed6f760fb319d_w16_h16.png"
     end
   end
 
