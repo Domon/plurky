@@ -85,6 +85,8 @@ You can get it from the [test console][].
 
 * Improve test coverage.
 * Add APIs.
+* Catch errors from Plurk.
+* APIs should return consistent data. (e.g. status & update.)
 
 ## Credits
 

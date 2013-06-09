@@ -21,4 +21,22 @@ describe Plurky::API::Timeline do
     end
   end
 
+  describe "#update" do
+    before do
+      stub_post("/APP/Timeline/plurkAdd", :content => "I'm plurking with Plurky!", :qualifier => "says").
+        to_return(json_response("update.json"))
+    end
+
+    it "requests the correct resource" do
+      client.update("I'm plurking with Plurky!", "says")
+      expect(a_post("/APP/Timeline/plurkAdd", :content => "I'm plurking with Plurky!", :qualifier => "says")).to have_been_made
+    end
+
+    it "returns a correct Hashie::Mash" do
+      status = client.update("I'm plurking with Plurky!", "says")
+      expect(status).to be_a Hashie::Mash
+      expect(status.content_raw).to eq "I'm plurking with Plurky!"
+    end
+  end
+
 end

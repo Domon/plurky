@@ -20,8 +20,16 @@ def a_get(path, query = {})
   a_request(:get, plurk_url(path)).with(:query => query)
 end
 
+def a_post(path, data = {})
+  a_request(:post, plurk_url(path)).with(:body => data)
+end
+
 def stub_get(path, query = {})
   stub_request(:get, plurk_url(path)).with(:query => query)
+end
+
+def stub_post(path, data = {})
+  stub_request(:post, plurk_url(path)).with(:body => data)
 end
 
 def fixtures_path
