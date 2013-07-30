@@ -30,8 +30,11 @@ Or install it yourself as:
 
 ## Documentation
 
-* This gem: http://rdoc.info/gems/plurky
-* Plurk API 2.0: http://www.plurk.com/API
+* [Plurky][]
+* [Plurk API 2.0][]
+
+[Plurky]: http://rdoc.info/gems/plurky
+[Plurk API 2.0]: http://www.plurk.com/API
 
 ## Examples
 
@@ -73,13 +76,17 @@ Plurky.get '/APP/Timeline/getPlurks'
 ## Implemented APIs
 
 * status
+* update
 
-## The access token
+## Obtaining access tokens
 
-Plurky will not support obtaining access token.
-You can get it from the [test console][].
+Plurky will not support obtaining access tokens.
+
+If you do not intend to provide service to other users, you can obtain an access token from the [test console][].
+(You may need to [create a Plurk App][] first to get a pair of comsumer key and secret.)
 
 [test console]: http://www.plurk.com/OAuth/test
+[create a Plurk App]: http://www.plurk.com/PlurkApp/register
 
 ## TODO
 
