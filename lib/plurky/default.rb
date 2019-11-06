@@ -5,7 +5,7 @@ require 'plurky/version'
 
 module Plurky
   module Default
-    ENDPOINT = 'http://www.plurk.com/'
+    ENDPOINT = 'https://www.plurk.com/'
 
     CONNECTION_OPTIONS = {
       :headers => {

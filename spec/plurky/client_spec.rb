@@ -89,7 +89,7 @@ describe Plurky::Client do
 
   describe "#auth_header" do
     it "creates the correct auth headers" do
-      uri = URI("http://www.plurk.com/APP/Profile/getPublicProfile")
+      uri = URI("https://www.plurk.com/APP/Profile/getPublicProfile")
       authorization = client.send(:auth_header, :get, uri, { :user_id => 34 })
       expect(authorization.options[:signature_method]).to eq "HMAC-SHA1"
       expect(authorization.options[:version]).to          eq "1.0"

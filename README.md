@@ -36,7 +36,7 @@ Or install it yourself as:
 * [Plurk API 2.0][]
 
 [Plurky]: http://rdoc.info/gems/plurky
-[Plurk API 2.0]: http://www.plurk.com/API
+[Plurk API 2.0]: https://www.plurk.com/API
 
 ## Examples
 
@@ -87,8 +87,8 @@ Plurky will not support obtaining access tokens.
 If you do not intend to provide service to other users, you can obtain an access token from the [test console][].
 (You may need to [create a Plurk App][] first to get a pair of comsumer key and secret.)
 
-[test console]: http://www.plurk.com/OAuth/test
-[create a Plurk App]: http://www.plurk.com/PlurkApp/register
+[test console]: https://www.plurk.com/OAuth/test
+[create a Plurk App]: https://www.plurk.com/PlurkApp/register
 
 ## TODO
 

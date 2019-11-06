@@ -3,7 +3,7 @@ module Plurky
     module Timeline
       # Returns a status
       #
-      # @see http://www.plurk.com/API#/APP/Timeline/getPlurk
+      # @see https://www.plurk.com/API#/APP/Timeline/getPlurk
       # @return [Hashie::Mash] The requested status.
       # @param id [Integer] A status ID.
       # @param options [Hash] A customizable set of options.
@@ -15,7 +15,7 @@ module Plurky
 
       # Updates the authenticating user's status
       #
-      # @see http://www.plurk.com/API#/APP/Timeline/plurkAdd
+      # @see https://www.plurk.com/API#/APP/Timeline/plurkAdd
       # @return [Hashie::Mash] The created status.
       # @param content [String] The content of the status update, up to 140 characters.
       # @param qualifier [String] The qualifier of the status update.
